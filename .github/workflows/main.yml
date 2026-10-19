@@ -22,5 +22,5 @@ jobs:
       - name: Subir la DLL como descarga
         uses: actions/upload-artifact@v4
         with:
-          name: MilsTozMic-VST2-x64
-          path: build/MilsTozMic.dll
+          name: MilsTozMic-Plugin
+          path: "**/*.dll"
