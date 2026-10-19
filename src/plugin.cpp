@@ -1,4 +1,4 @@
-// plugin.cpp - VoiceEQ Mic: plugin VST 2.x (64 bits) para Equalizer APO
+// plugin.cpp - MilsToz Mic: plugin VST 2.x (64 bits) para Equalizer APO
 #include <cstring>
 #include <cstdio>
 #include <vector>
@@ -189,9 +189,9 @@ VstIntPtr dispatcher(AEffect* e, VstInt32 op, VstInt32 index, VstIntPtr value, v
 
         case effCanBeAutomated: return (index >= 0 && index < PARAM_COUNT) ? 1 : 0;
         case effGetPlugCategory: return kPlugCategEffect;
-        case effGetEffectName: copyStr(ptr, "VoiceEQ Mic", 32); return 1;
-        case effGetVendorString: copyStr(ptr, "VoiceEQ", 64); return 1;
-        case effGetProductString: copyStr(ptr, "VoiceEQ Mic", 64); return 1;
+        case effGetEffectName: copyStr(ptr, "MilsToz Mic", 32); return 1;
+        case effGetVendorString: copyStr(ptr, "MilsToz", 64); return 1;
+        case effGetProductString: copyStr(ptr, "MilsToz Mic", 64); return 1;
         case effGetVendorVersion: return 1000;
         case effCanDo: return 0;
         case effGetVstVersion: return 2400;
@@ -222,7 +222,7 @@ VST_EXPORT AEffect* VSTPluginMain(audioMasterCallback master) {
     e.flags = effFlagsHasEditor | effFlagsCanReplacing | effFlagsProgramChunks;
     e.initialDelay = 0;                       // latencia cero
     e.object = p;
-    e.uniqueID = ('V' << 24) | ('E' << 16) | ('Q' << 8) | 'm';
+    e.uniqueID = ('M' << 24) | ('T' << 16) | ('Z' << 8) | 'm';
     e.version = 1000;
     e.processReplacing = processReplacing;
     e.processDoubleReplacing = processDouble;
