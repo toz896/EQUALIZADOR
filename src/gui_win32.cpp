@@ -411,7 +411,7 @@ void* guiOpen(SharedState* st, void* parentWnd) {
     wc.style = CS_DBLCLKS;
     wc.lpfnWndProc = WndProc;
     wc.hInstance = g_hInst;
-    wc.hCursor = LoadCursorW(nullptr, IDC_ARROW);
+    wc.hCursor = LoadCursorA(nullptr, IDC_ARROW);
     wc.lpszClassName = g->cls;
     if (!RegisterClassExW(&wc)) { delete g; return nullptr; }
 
